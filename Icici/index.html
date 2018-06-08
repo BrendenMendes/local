@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> image upload </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+</head>
+
+<body>
+  
+  <div id="show"></div>
+
+  <form name="Upload" action="#" enctype="multipart/form-data" method="post">
+    <p>Filename: <input type="file" name="submitfile" id="submitfile" />
+    <input type="button" value="Send" onClick="checkSize();" />
+ </form>        
+        
+            
+    	
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/upload.js"></script>
+    <script type="text/javascript">
+        function checkSize()
+          {
+              im = new Image();
+              im.src = document.Upload.submitfile.value;
+              document.getElementById("show").innerHTML = im.src;
+              if(!im.src)
+                  im.src = document.getElementById('submitfile').files[0].value;
+                  alert(im.src);
+              }
+    </script> 
+
+</body>
+</html>
